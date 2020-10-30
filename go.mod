@@ -12,5 +12,5 @@ require (
 	golang.org/x/sys v0.0.0-20201029080932-201ba4db2418 // indirect
 )
 
-// for thrift of github.com/uber/tchannel-go
-// replace github.com/apache/thrift => github.com/apache/thrift v0.0.0-20151001171628-53dd39833a08
+// thannel_9 github.com/uber/tchannel-go
+replace github.com/apache/thrift => github.com/apache/thrift v0.0.0-20151001171628-53dd39833a08
