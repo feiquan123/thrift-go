@@ -13,4 +13,4 @@ require (
 )
 
 // for thrift of github.com/uber/tchannel-go
-replace github.com/apache/thrift => github.com/apache/thrift v0.0.0-20151001171628-53dd39833a08
+// replace github.com/apache/thrift => github.com/apache/thrift v0.0.0-20151001171628-53dd39833a08

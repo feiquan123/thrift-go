@@ -9,9 +9,9 @@ import (
 	"localhost.com/thrift-go/gen/thrift/echo"
 )
 
-type EchoServer struct{}
+type echoHandler struct{}
 
-func (e *EchoServer) Echo(ctx context.Context, req *echo.EchoReq) (*echo.EchoRes, error) {
+func (e *echoHandler) Echo(ctx context.Context, req *echo.EchoReq) (r *echo.EchoRes, err error) {
 	fmt.Printf("message from client: %s\n", req.GetMsg())
 
 	res := &echo.EchoRes{
@@ -27,7 +27,7 @@ func main() {
 		panic(err)
 	}
 
-	handler := &EchoServer{}
+	handler := &echoHandler{}
 	processor := echo.NewEchoProcessor(handler)
 
 	// 通信协议
