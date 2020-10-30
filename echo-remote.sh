@@ -1,14 +1,16 @@
 #! /bin/bash
 
-if [ ! -d "gen-go-13" ];then
-	echo "create path: gen-go-13"
-	mkdir gen-go-13
-fi
-thrift -r -gen go -out gen-go-13 echo.thrift
-cd ./gen-go-13/echo
+# thrift 
+
+rm -rf gen/thrift
+echo "create path: gen/thrift"
+mkdir gen/thrift
+
+thrift -r -gen go -out gen/thrift echo.thrift
+cd ./gen/thrift/echo
 if [ ! -f "go.mod" ];then 
 	echo "creaet go package echo:"
-	go mod init echo  # or modify echo-remote.go "echo"=>"localhost.com/thrift-go/gen-go-13/echo"
+	go mod init echo  # or modify echo-remote.go "echo"=>"localhost.com/thrift-go/gen/thrift/echo"
 fi
 
 echo "run echo-remote client:"
@@ -23,4 +25,4 @@ rm go.mod
 rm go.sum
 
 # run gen-client
-# go run ./gen-client/echo-remote.go  -p 9898 -P compact echo  {1:{\"str\":\"hello\"}}
+# go run ./client/gen-client/echo-remote.go  -p 9898 -P compact echo  {1:{\"str\":\"hello\"}}

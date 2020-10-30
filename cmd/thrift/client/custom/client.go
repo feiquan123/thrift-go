@@ -9,7 +9,7 @@ import (
 
 	"github.com/apache/thrift/lib/go/thrift"
 
-	"localhost.com/thrift-go/gen-go-13/echo"
+	"localhost.com/thrift-go/gen/thrift/echo"
 )
 
 func main() {
