@@ -25,4 +25,4 @@ rm go.mod
 rm go.sum
 
 # run gen-client
-# go run ./client/gen-client/echo-remote.go  -p 9898 -P compact echo  {1:{\"str\":\"hello\"}}
+# go run cmd/thrift/client/gen-client/echo-remote.go  -p 9898 -P compact echo  {1:{\"str\":\"hello\"}}
